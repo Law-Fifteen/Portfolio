@@ -1,3 +1,19 @@
+// Accordion functionality for problem sections
+function toggleProblem(button) {
+    const section = button.closest('.problem-section');
+    const wasActive = section.classList.contains('active');
+    
+    // Close all sections
+    document.querySelectorAll('.problem-section').forEach(s => {
+        s.classList.remove('active');
+    });
+    
+    // Toggle clicked section
+    if (!wasActive) {
+        section.classList.add('active');
+    }
+}
+
 // Modal functionality
 const modal = document.getElementById('performanceModal');
 const btn = document.getElementById('performanceBtn');

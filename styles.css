@@ -661,10 +661,16 @@ body {
     height: 4px;
     -webkit-appearance: none;
     appearance: none;
-    background: var(--border-color);
+    background: linear-gradient(to right, var(--secondary-color) 0%, var(--secondary-color) var(--volume, 80%), var(--border-color) var(--volume, 80%), var(--border-color) 100%);
     border-radius: 2px;
     outline: none;
     cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -672,18 +678,31 @@ body {
     appearance: none;
     width: 12px;
     height: 12px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border-radius: 50%;
     cursor: pointer;
+    margin-top: -4px;
+}
+
+.volume-slider::-moz-range-track {
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
 }
 
 .volume-slider::-moz-range-thumb {
     width: 12px;
     height: 12px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border-radius: 50%;
     cursor: pointer;
     border: none;
+}
+
+.volume-slider::-moz-range-progress {
+    background: var(--secondary-color);
+    height: 4px;
+    border-radius: 2px;
 }
 
 .control-btn {

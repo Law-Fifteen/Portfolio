@@ -103,6 +103,9 @@ function initPlayer() {
     updateSongInfo();
     createPlaylist();
 
+    // Set initial volume slider visual
+    volumeSlider.style.setProperty('--volume', (volume * 100) + '%');
+
     audio.addEventListener('timeupdate', updateProgress);
     audio.addEventListener('ended', nextSong);
 
@@ -211,6 +214,7 @@ function handleVolumeChange() {
         audio.muted = false;
         audio.volume = volume;
     }
+    volumeSlider.style.setProperty('--volume', (volume * 100) + '%');
     updateVolumeIcon();
 }
 

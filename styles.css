@@ -608,6 +608,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
 .song-info {
@@ -734,7 +735,9 @@ body {
     border-radius: 6px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-color: var(--border-color);
+    flex-shrink: 0;
 }
 
 .playlist-item-info {

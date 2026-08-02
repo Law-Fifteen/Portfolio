@@ -66,6 +66,8 @@ let playlist = [];
 let currentSongIndex = 0;
 let isPlaying = false;
 let audio = null;
+let volume = 0.8;
+let isMuted = false;
 
 // DOM Elements
 const playerToggle = document.getElementById('playerToggle');
@@ -79,6 +81,9 @@ const songArtist = document.getElementById('songArtist');
 const albumArt = document.getElementById('albumArt');
 const progressBar = document.getElementById('progressBar');
 const playlistEl = document.getElementById('playlist');
+const muteBtn = document.getElementById('muteBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const volumeIcon = document.getElementById('volumeIcon');
 
 function shuffleArray(arr) {
     const shuffled = [...arr];
@@ -91,6 +96,7 @@ function shuffleArray(arr) {
 
 function initPlayer() {
     audio = new Audio();
+    audio.volume = volume;
     playlist = shuffleArray(allSongs);
     audio.src = playlist[0].src;
 
@@ -106,6 +112,8 @@ function initPlayer() {
     prevBtn.addEventListener('click', prevSong);
     nextBtn.addEventListener('click', nextSong);
     progressBar.addEventListener('click', seekTo);
+    muteBtn.addEventListener('click', toggleMute);
+    volumeSlider.addEventListener('input', handleVolumeChange);
 }
 
 function togglePlayer() {
@@ -177,6 +185,41 @@ function seekTo(e) {
     const clickX = e.offsetX;
     const duration = audio.duration;
     audio.currentTime = (clickX / width) * duration;
+}
+
+function toggleMute() {
+    if (isMuted) {
+        isMuted = false;
+        audio.muted = false;
+        audio.volume = volume;
+        volumeSlider.value = volume;
+    } else {
+        isMuted = true;
+        audio.muted = true;
+        volumeSlider.value = 0;
+    }
+    updateVolumeIcon();
+}
+
+function handleVolumeChange() {
+    volume = parseFloat(volumeSlider.value);
+    if (volume === 0) {
+        isMuted = true;
+        audio.muted = true;
+    } else {
+        isMuted = false;
+        audio.muted = false;
+        audio.volume = volume;
+    }
+    updateVolumeIcon();
+}
+
+function updateVolumeIcon() {
+    if (isMuted || volume === 0) {
+        volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+    } else {
+        volumeIcon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+    }
 }
 
 function createPlaylist() {

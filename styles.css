@@ -336,7 +336,7 @@ body {
 }
 
 .problem-section.active .problem-content {
-    max-height: 2000px;
+    max-height: 10000px;
     padding: 0 30px 30px;
 }
 

@@ -17,13 +17,13 @@ function toggleProblem(button) {
 // Modal functionality
 const modal = document.getElementById('performanceModal');
 const btn = document.getElementById('performanceBtn');
-const span = document.getElementsByClassName('close')[0];
+const closeBtn = document.getElementById('closeModal');
 
 btn.onclick = function() {
     modal.style.display = 'block';
 }
 
-span.onclick = function() {
+closeBtn.onclick = function() {
     modal.style.display = 'none';
 }
 

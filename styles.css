@@ -201,12 +201,12 @@ body {
 
 .modal-content {
     background-color: var(--bg-primary);
-    margin: 1% auto;
+    margin: 200px auto;
     padding: 20px;
     border-radius: 12px;
     width: 96%;
     max-width: 96vw;
-    height: 97vh;
+    height: calc(100vh - 400px);
     position: relative;
     box-shadow: var(--shadow-xl);
     display: flex;

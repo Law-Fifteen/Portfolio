@@ -347,6 +347,16 @@ body {
     line-height: 1.8;
 }
 
+.problem-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.problem-content a:hover {
+    color: var(--secondary-color);
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

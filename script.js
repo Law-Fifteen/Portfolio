@@ -72,10 +72,10 @@ let isMuted = false;
 // DOM Elements
 const playerToggle = document.getElementById('playerToggle');
 const playerPanel = document.getElementById('playerPanel');
-const closePlayer = document.getElementById('closePlayer');
 const playBtn = document.getElementById('playBtn');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+const shuffleBtn = document.getElementById('shuffleBtn');
 const songTitle = document.getElementById('songTitle');
 const songArtist = document.getElementById('songArtist');
 const albumArt = document.getElementById('albumArt');
@@ -84,6 +84,15 @@ const playlistEl = document.getElementById('playlist');
 const muteBtn = document.getElementById('muteBtn');
 const volumeSlider = document.getElementById('volumeSlider');
 const volumeIcon = document.getElementById('volumeIcon');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+
+function formatTime(sec) {
+    if (!sec || isNaN(sec)) return '0:00';
+    var m = Math.floor(sec / 60);
+    var s = Math.floor(sec % 60);
+    return m + ':' + s.toString().padStart(2, '0');
+}
 
 function shuffleArray(arr) {
     const shuffled = [...arr];
@@ -110,21 +119,28 @@ function initPlayer() {
     audio.addEventListener('ended', nextSong);
 
     playerToggle.addEventListener('click', togglePlayer);
-    closePlayer.addEventListener('click', closePlayerPanel);
     playBtn.addEventListener('click', togglePlay);
     prevBtn.addEventListener('click', prevSong);
     nextBtn.addEventListener('click', nextSong);
     progressBar.addEventListener('click', seekTo);
     muteBtn.addEventListener('click', toggleMute);
     volumeSlider.addEventListener('input', handleVolumeChange);
+    shuffleBtn.addEventListener('click', reshufflePlaylist);
+}
+
+function reshufflePlaylist() {
+    playlist = shuffleArray(allSongs);
+    currentSongIndex = 0;
+    audio.src = playlist[0].src;
+    updateSongInfo();
+    createPlaylist();
+    if (isPlaying) {
+        audio.play();
+    }
 }
 
 function togglePlayer() {
     playerPanel.classList.toggle('active');
-}
-
-function closePlayerPanel() {
-    playerPanel.classList.remove('active');
 }
 
 function togglePlay() {
@@ -180,6 +196,8 @@ function updateProgress() {
     if (audio.duration) {
         const progress = (audio.currentTime / audio.duration) * 100;
         progressBar.style.setProperty('--progress', progress + '%');
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+        durationEl.textContent = formatTime(audio.duration);
     }
 }
 

@@ -56,7 +56,7 @@ const allSongs = [
     { title: "Lovesong", artist: "The Cure", src: "Music/The Cure - Lovesong.mp3", cover: "Music/The Cure - Lovesong.jpg" },
     { title: "Feelin' Good - Live", artist: "The Growlers", src: "Music/The Growlers - Feelin' Good - Live.mp3", cover: "Music/The Growlers - Feelin' Good - Live.jpg" },
     { title: "The Adults Are Talking", artist: "The Strokes", src: "Music/The Strokes - The Adults Are Talking.mp3", cover: "Music/The Strokes - The Adults Are Talking.jpg" },
-    { title: "Stuck", artist: "Thirty Seconds To Mars", src: "Music/Thirty Seconds To Mars - Stuck.mp3", cover: "Music/Thirty Seconds To Mars - Stuck.jpg" },
+    { title: "Stuck", artist: "Thirty Seconds To Mars", src: "Music/Thirty Seconds To Mars \u2014 Stuck.mp3", cover: "Music/Thirty Seconds To Mars \u2014 Stuck.jpg" },
     { title: "Emmit Fenn", artist: "Threads", src: "Music/Threads - Emmit Fenn.mp3", cover: "Music/Threads - Emmit Fenn.jpg" },
     { title: "Rush", artist: "Troye Sivan", src: "Music/Troye Sivan - Rush.mp3", cover: "Music/Troye Sivan - Rush.jpg" },
     { title: "The Line", artist: "Twenty One Pilots", src: "Music/Twenty One Pilots - The Line.mp3", cover: "Music/Twenty One Pilots - The Line.jpg" }
@@ -66,7 +66,7 @@ let playlist = [];
 let currentSongIndex = 0;
 let isPlaying = false;
 let audio = null;
-let volume = 0.8;
+let volume = 0.3;
 let isMuted = false;
 
 // DOM Elements

@@ -581,8 +581,7 @@ body {
 
 .return-btn {
     display: block;
-    width: 100%;
-    max-width: 520px;
+    width: 300px;
     margin: 20px auto 0;
     text-align: center;
 }

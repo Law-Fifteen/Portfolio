@@ -178,20 +178,23 @@ body {
     opacity: 0.9;
 }
 
-.hero-subtitle-btn {
+.hero-btn {
     display: inline-block;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
+    background: #4E1D72;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     transition: all 0.3s ease;
-    padding-bottom: 2px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.32), 0 0 20px rgba(59, 130, 246, 0.16);
 }
 
-.hero-subtitle-btn:hover {
-    color: #ffffff;
-    border-bottom-color: #ffffff;
+.hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
 }
 
 /* Disclaimer Section */

@@ -197,38 +197,42 @@ body {
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
 }
 
-.hero-disclaimer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 16px 24px;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(51, 65, 85, 0.5);
+/* Disclaimer Section */
+.disclaimer {
+    padding: 40px 0;
+    background: var(--bg-secondary);
+}
+
+.disclaimer-content {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    z-index: 1;
 }
 
-.hero-disclaimer p {
-    font-size: 0.75rem;
-    line-height: 1.6;
-    opacity: 0.8;
-    margin-bottom: 12px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+.disclaimer-content p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.8;
 }
 
-.hero-disclaimer .cta-button {
+.disclaimer-content .cta-button {
     background: #4E1D72;
     color: white;
     border: none;
-    padding: 8px 16px;
-    font-size: 0.8rem;
+    padding: 12px 24px;
+    font-size: 0.9rem;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.disclaimer-content .cta-button:hover {
+    background: #3a1557;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
     transition: all 0.3s ease;
 }
 

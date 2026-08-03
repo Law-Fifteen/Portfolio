@@ -572,6 +572,11 @@ body {
     margin-right: auto;
 }
 
+.contact-buttons {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
 .contact-actions {
     display: flex;
     gap: 20px;
@@ -580,7 +585,9 @@ body {
 }
 
 .return-btn {
-    flex-basis: 100%;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
     text-align: center;
 }
 

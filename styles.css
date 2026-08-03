@@ -178,6 +178,22 @@ body {
     opacity: 0.9;
 }
 
+.hero-subtitle-btn {
+    display: inline-block;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.hero-subtitle-btn:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
 /* Disclaimer Section */
 .disclaimer {
     padding: 80px 0;

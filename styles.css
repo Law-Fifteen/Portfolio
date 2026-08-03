@@ -580,9 +580,7 @@ body {
 }
 
 .return-btn {
-    display: block;
-    width: 300px;
-    margin: 20px auto 0;
+    flex-basis: 100%;
     text-align: center;
 }
 
